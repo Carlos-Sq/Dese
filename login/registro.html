@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+</head>
+<body>
+    <div class="fondo registro">
+        <img src="../imagenes/logo.jpg" alt="">
+    </div>
+    
+    <div class="registro">
+        <form onsubmit="registrar(event)">
+        <p><strong>Usuario</strong></p>
+        <input type="text" name="usuarioN" id="usuarioN">
+        <p><strong>Contraseña Nueva</strong></p>
+        <input type="password" name="contraseñaNueva" id="contraseñaN">
+
+        <button type="submit"> Registrate </button>
+        </form>
+    </div>
+    <script>
+        function registrar(event)
+        {
+            //Evita que se recargue la pagina
+            event.preventDefault();
+            let usuarioN = document.getElementById("usuarioN").value;
+            let claveN = document.getElementById("contraseñaN").value;
+            //Guarda temporalmente la contraseña en el navegador de las 2 variables
+            localStorage.setItem("usuarioN", usuarioN)
+            localStorage.setItem("contraseñaN", claveN)
+            //Manda una alerta de regitrado
+            alert("Usuario registrado");
+            // Te redirigue a la pagina principal
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

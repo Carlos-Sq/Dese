@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@300;400;500&display=swap');
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Syne', sans-serif;
+}
+
+.fondo {
+position: fixed;
+inset: 0;
+z-index: 0;
+}
+
+.fondo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+filter: brightness(0.45) blur(2px);
+}
+
+.Ingreso {
+position: relative;
+z-index: 1;
+width: 100%;
+max-width: 380px;
+padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2rem);
+margin: 1.5rem;
+background: rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 0.5px solid rgba(255, 255, 255, 0.2);
+border-radius: clamp(14px, 3vw, 20px);
+animation: fadeUp 0.7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(28px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.Ingreso form {
+display: flex;
+flex-direction: column;
+}
+
+.Ingreso p {
+font-size: clamp(9px, 2vw, 11px);
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.5);
+margin: 0 0 0.45rem 0;
+font-weight: 400;
+}
+
+.Ingreso input[type="text"],
+.Ingreso input[type="password"] {
+width: 100%;
+background: transparent;
+border: none;
+border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
+outline: none;
+font-family: 'Syne', sans-serif;
+font-size: clamp(13px, 3.5vw, 15px);
+color: rgba(255, 255, 255, 0.9);
+padding: 0.4rem 0 0.5rem;
+margin-bottom: clamp(1rem, 3vw, 1.5rem);
+caret-color: #afa9ec;
+transition: border-color 0.25s;
+}
+
+.Ingreso input[type="text"]::placeholder,
+.Ingreso input[type="password"]::placeholder {
+color: rgba(255, 255, 255, 0.25);
+}
+
+.Ingreso input[type="text"]:focus,
+.Ingreso input[type="password"]:focus {
+border-bottom-color: rgba(175, 169, 236, 0.8);
+}
+
+.Ingreso button[type="submit"] {
+width: 100%;
+padding: clamp(0.6rem, 2.5vw, 0.75rem) 0;
+background: rgba(255, 255, 255, 0.1);
+border: 0.5px solid rgba(255, 255, 255, 0.3);
+border-radius: 10px;
+color: rgba(255, 255, 255, 0.95);
+font-family: 'Syne', sans-serif;
+font-size: clamp(11px, 2.5vw, 13px);
+letter-spacing: 0.18em;
+text-transform: uppercase;
+cursor: pointer;
+transition: background 0.25s, border-color 0.25s, transform 0.12s;
+margin-top: 0.5rem;
+margin-bottom: 1.25rem;
+min-height: 44px;
+}
+
+.Ingreso button[type="submit"]:hover {
+background: rgba(255, 255, 255, 0.2);
+border-color: rgba(255, 255, 255, 0.5);
+}
+
+.Ingreso button[type="submit"]:active {
+transform: scale(0.98);
+}
+
+.Ingreso a {
+text-align: center;
+font-size: clamp(11px, 2.5vw, 12px);
+color: rgba(255, 255, 255, 0.45);
+text-decoration: none;
+letter-spacing: 0.06em;
+transition: color 0.2s;
+}
+
+.Ingreso a:hover {
+color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 400px) {
+.Ingreso {
+    border-radius: 14px;
+}
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>DESE</title>
+</head>
+<body>
+    <div class="fondo">
+        <!-- Cuando los archivos no estan al mismo nivel debemos poner ../ para que salgue de la carpeta y busque afuera -->
+        <img src="../imagenes/WhatsApp Image 2026-05-24 at 20.00.01.jpeg" alt="">
+
+    </div>
+
+    <!-- Div :  en un almacenador de un elmento de la pagina web asi es mas facil ponerle estilo -- 
+    1- form : es un frmulario muy bueno para login 
+    2- submit : es para poder recolectar los datos de todo el form para ello debemos poner el name de cada input, porque si no lo pnemos lo lo recolectara esto sirve para la logica
+    type : sirve para el tipo de dato que tendra hay varios -->
+    
+    <div class="Ingreso">
+        <form onsubmit="Inicio(event)">
+            <p><strong> Usuario </strong></p>
+            <input type="text" name="Identificacion" id="usuario">
+            <p><strong> Contraseña </strong></p>
+            <input type="password" name="clave" id="clave"> <br>
+            <button type="submit">Ingresar</strong></button>
+            <!-- Esto nos serve para redirigir al usuario a un  -->
+            <a href="registro.html"><strong>usuario nuevo</strong></a>
+        </form>
+
+    </div>
+    <script>
+    
+    function Inicio(event)
+    {
+        event.preventDefault();
+
+        let usuario = document.getElementById("usuario").value;
+
+        let clave = document.getElementById("clave").value;
+        // Recuperacion de datos que se hicieron en registro
+        let usuarioGuardado = localStorage.getItem("usuarioN");
+
+        let claveGuardada = localStorage.getItem("contraseñaN");
+
+        if(usuario == usuarioGuardado && clave == claveGuardada)
+        {
+            alert("Bienvenido");
+            //Ingresa al menu de ingreso
+            window.location.href = "menu.html";
+        }
+        else
+        {
+            alert("Usuario o contraseña incorrectos");
+        }
+    }
+    </script>
+
+</div>
+</body>
+</html>
